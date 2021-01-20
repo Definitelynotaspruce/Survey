@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="outside" class="container">
+        <form id="survey-form" action="/my-handling-form-page" method="post">
+            <h1 id="title">Klausimynas</h1>
+            
+            <div id="name-label">
+                <label for="name">Vardas:</label>
+                <input type="text" required id="name" name="user_name" placeholder="Įrašykite savo vardą">  
+                <button type="button" id="add_second_name" class="button-addSmall">+ Pridėti vardą</button>
+            </div>
+
+            <div id="second_name-label" class="hidden">
+                <label for="second_name">Antras vardas:</label>
+                <input type="text" required id="second_name" name="second_user_name"
+                    placeholder="Įrašykite savo antrą vardą">  
+            </div>
+
+            <div id="surname-label">
+                <label for="surname">Pavardė:</label>
+                <input type="text" required id="surname" name="user_surname" placeholder="Įrašykite savo pavardę">
+                <button type="button" id="add_second_surname" class="button-addSmall">+ Pridėti pavardę</button>  
+            </div>
+            <div id="second_surname-label" class="hidden">
+                <label for="second_surname">Antra pavardė:</label>
+                <input type="text" required id="second_surname" name="user_surname"
+                    placeholder="Įrašykite savo antrą pavvardę">  
+            </div>
+            <div>
+                <label for="gender">Lytis:</label>
+                <select id="gender_dropdown">
+                    <option value="male">Vyras</option>
+                    <option value="female">Moteris</option>
+                    <option value="other">Kita</option>
+                </select>
+            </div>
+            <div>
+                <!---add check if provided info is numeric...-->
+                <label for="personal_code-label">Asmens kodas:</label>
+                <input type="number" min="10000000000" max="99999999999" size="11" id="personal_code"
+                    name="Personal code" placeholder="Irašykite savo asmens kodą">  
+            </div>
+            <div>
+                <label for="education">Išsilavinimas:</label>
+                <select id="education_dropdown">
+                    <option value="None">Nėra</option>
+                    <option value="University">Aukštasis-universitetinis</option>
+                    <option value="College">Aukštasis-koleginis</option>
+                    <option value="Profession">Profesinis</option>
+                    <option value="Secondary">Vidurinis</option>
+                    <option value="Primary">Pagrindinis</option>
+                </select>
+            </div>
+            <div class="hidden" id="graduation">
+                <div>
+                    <label id="graduate-label" for="place">Paskutinė užbaigta mokymo įstaiga:</label>
+                    <input type="text" id="graduate_place" name="place" placeholder="Mokymo įstaiga"> 
+                </div>
+
+                <div>
+                    <label id="date-label" for="date">Mokymo įstaigos užbaigimo metai:</label>
+                    <input type="month" id="graduate_date" name="date" placeholder="Užbaigimo metai"> 
+                </div>
+                <div id="qualification">
+                    <label for="qualification">Kvalifikacija:</label>
+                    <input type="text" required id="qualification" name="qualification"
+                        placeholder="(pvz. buhalterija, informacinės sistemos)">  
+                </div>
+                <div id="degree">
+                    <label for="degree">Mokslo laipsnis:</label>
+                    <select id="degree_dropdown">
+                        <option value="doctoral">Doktorantūra</option>
+                        <option value="master">Magistras</option>
+                        <option value="bachelor">Bakalauras</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label for="marriage">Vedybinė padėtis:</label>
+                <select id="marriage_dropdown">
+                    <option value="n-married">Nevedęs/Netekėjusi</option>
+                    <option value="married">Vedęs/Ištekėjusi</option>
+                    <option value="divorced">Išsiskyręs(-usi)</option>
+                </select>
+            </div>
+
+            <div class="hidden" id="partner-info">
+                <div>
+                    <label for="partner-name">Sutuoktinio(-ės) vardas:</label>
+                    <input type="text" required id="partner-name" placeholder="Įrašykite savo sutuoktinio(-ės) vardą">
+                </div>
+    
+                <div>
+                    <label for="partner-surname">Sutuoktinio(-ės) pavardė:</label>
+                    <input type="text" required id="partner-surname" placeholder="Įrašykite savo sutuoktinio(-ės) pavardę">
+                </div>
+    
+                <div>
+                    <label for="partner-personal-code">Sutuoktinio(-ės) asmens kodas:</label>
+                    <input type="number" required id="partner-personal-code" placeholder="Įrašykite savo sutuoktinio(-ės) asmens kodą">
+                </div>
+            </div>
+            
+            <div>
+                <label id="child-cnt-label" for="child-cnt">Vaikų skaičius:</label>
+                <input type="number" id="child-cnt" name="phone" required>
+            </div>
+
+            <div>
+                <label for="profession-select">Profesinė padėtis:</label>
+                <select id="profession-dropdown">
+                    <option value="nothing">Nėra</option>
+                    <option value="studying">Studijuoja</option>
+                    <option value="working">Dirba</option>
+                    <option value="n-working">Nedirba</option>
+                    <option value="parent-holiday">Motinystes/Tevystės atostogose</option>
+                </select>
+            </div>
+
+            <div id="work-info" class="hidden">
+                <div>
+                    <label id="work-institution-label" for="work-institution">Darbo įstaiga:</label>
+                    <input type="text" id="work-institution" required>
+                </div>
+
+                <div>
+                    <label id="work-role-label" for="work-role">Darbo pareigos:</label>
+                    <input type="text" id="work-role" required>
+                </div>
+
+                <div>
+                    <label id="work-experience-label" for="work-experience">Darbo patirtis:</label>
+                    <input type="number" id="work-experience" required>
+                </div>
+
+                <div>
+                    <label id="work-type-label" for="work-type">Darbo pobudis:</label>
+                    <select id="work-type-dropdown">
+                        <option value="boss">Vadovas</option>
+                        <option value="working">Specialistas</option>
+                        <option value="n-working">Individuali veikla</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label id="work-category-label" for="work-category">Darbo pobudis:</label>
+                    <select id="work-category-dropdown">
+                        <option>Teisė</option>
+                        <option>Viešasis sektorius</option>
+                        <option>Sveikatos apsauga</option>
+                        <option>Farmacija</option>
+                        <option>Pramonė / Gamyba</option>
+                        <option>IT</option>
+                        <option>Prekyba</option>
+                        <option>Krašto apsauga</option>
+                        <option>Vidaus reikalų sistema</option>
+                        <option>Klientų aptarnavimas ir paslaugos</option>
+                        <option>Transportas</option>
+                        <option>Kultūra ir pramogos</option>
+                        <option>Švietimas / studijos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label id="number-label" for="phone">Telefono numeris:</label>
+                <input type="tel" id="phone_number" name="phone"  pattern="+[0-9]{11}" required>
+            </div>
+            <div>
+                <label id="email-label" for="Email">El. paštas:</label>
+                <input type="email" required id="email" name="user_email" placeholder="Įrašykite savo el. paštą">  
+            </div>
+            <div id="social_network">
+                <label id="social_network-label" for="name">Socialiniai tinklai:</label>
+                <input type="url" name="social_network"
+                    placeholder="Nuoroda į socialinį tinklą">  
+                    <button type="button" id="add_link" class="button-addSmall">+ Pridėti dar vieną</button>
+            </div>
+            <div>
+                <label for="address-label">Address:</label>
+                <input type="Address" id="address" name="Address" placeholder="Enter address here">  
+            </div>
+            <div id="submitbutton">
+                <button type="submit" id="submit">Send your application</button>  
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+<script type="module" src="script.js"></script>
+
+</html>
