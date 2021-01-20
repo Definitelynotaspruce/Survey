@@ -69,8 +69,11 @@
                 </div>
                 <div id="qualification">
                     <label for="qualification">Kvalifikacija:</label>
-                    <input type="text" required id="qualification" name="qualification"
+                    <div id="qualifications">
+                        <input type="text" required id="qualification-0" name="qualification"
                         placeholder="(pvz. buhalterija, informacinės sistemos)">  
+                    </div>
+                    <button type="button" id="add_qualification" class="button-addSmall">+ Pridėti papildoma kvalifikaciją</button>
                 </div>
                 <div id="degree">
                     <label for="degree">Mokslo laipsnis:</label>
@@ -81,6 +84,8 @@
                     </select>
                 </div>
             </div>
+            <button type="button" id="test" class="button-addSmall">+ Pridėti papildoma kvalifikaciją</button>
+
 
             <div>
                 <label for="marriage">Vedybinė padėtis:</label>
@@ -114,7 +119,7 @@
             </div>
 
             <div>
-                <label for="profession-select">Profesinė padėtis:</label>
+                <label for="profession-dropdown">Profesinė padėtis:</label>
                 <select id="profession-dropdown">
                     <option value="nothing">Nėra</option>
                     <option value="studying">Studijuoja</option>
@@ -167,6 +172,46 @@
                         <option>Švietimas / studijos</option>
                     </select>
                 </div>
+            </div>
+
+            <div id="study-info" class="hidden">
+                <div>
+                    <label for="study-level">Studijų pakopa</label>
+                    <select id="study-level">
+                        <option value="nothing">Bakalauras</option>
+                        <option value="studying">Magistras</option>
+                        <option value="working">Doktorantūra</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="study-year">Studijų kursas</label>
+                    <select id="study-year">
+                        <option value="1">Pirmas</option>
+                        <option value="2">Antras</option>
+                        <option value="3">Trečias</option>
+                        <option value="4">Ketvirtas</option>
+                        <option value="5">Penktas</option>
+                        <option value="6">Šeštas</option>
+                        <option value="7">Septintas</option>
+                        <option value="8">Aštuntas</option>
+                    </select>
+                </div>
+                <div>
+                    <label id="study-institution-label" for="study-institution">Studijų įstaiga:</label>
+                    <input type="text" id="study-institution" required>
+                </div>
+            </div>
+
+            <div id="no-work-info" class="hidden">
+                <div>
+                    <label id="no-work-reason-label" for="no-work-reason">Nedarbo priežastis:</label>
+                    <input type="text" id="no-work-reason" required>
+                </div>
+            </div>
+
+            <div class="hidden" id="profession-finish-info">
+                <label id="date-label" for="date">Tikėtina profesinės padeties pabaiga:</label>
+                <input type="month" id="profession-finish-date" name="date" placeholder="Profesinės padeties užbaigimo metai"> 
             </div>
 
             <div>

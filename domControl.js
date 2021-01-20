@@ -1,9 +1,11 @@
 export const domControl = (() => {
 
     const createInputField = (parent, className, ID_name, label_text, placeholder) => {
-        const label = document.createElement("label");
-        label.innerText = label_text;
-        parent.appendChild(label);
+        if (label_text) {
+            const label = document.createElement("label");
+            label.innerText = label_text;
+            parent.appendChild(label);
+        }
         const input = document.createElement("input");
         input.type = "text";
         input.className = className;
